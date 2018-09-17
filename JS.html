@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo">...</p>
+    <p id="demo2">...</p>
+    <p id="demo3">...</p>
+    <p id="demo4">...</p>
+
+
+    身高: <input type="text" name="height" value="180"><br>
+    體重: <input type="text" name="weight" value="80"><br>
+    <button onclick="calBMI()">計算</button>
+    <hr>
+    BMI: <span id="bmi"></span><br>
+
+    <script>
+
+        function calBMI() {
+            var h = document.getElementById("height").value;
+            h = parseFloat(h) / 100;
+            var w = document.getElementById("weight").value;
+            w = parseFloat(w);
+            bmi = w / (h * h);
+
+            if (bmi > 25) {
+                document.write("  體重過重");
+                ans = "  體重過重";
+            } else {
+                if (bmi < 20) {
+                    document.write("  體重過輕");
+                    ans = "  體重過輕";
+                } else {
+                    document.write("  體重正常");
+                    ans = "  體重正常";
+                }
+            }
+            document.getElementById("bmi").innerText = Math.round(bmi * 100) / 100 + ans;
+        }
+
+
+        // document.write("<br>");
+        // document.write("<br>");
+        // document.write("<br>");
+
+
+        // // alert("Hello! Javascript");
+
+        // document.getElementById("demo").innerHTML = "<h1>Hello! JS</h1>"
+        // document.getElementById("demo2").innerHTML = "<h2>Hello! JS</h2>"
+        // document.getElementById("demo3").innerText = "<h1>Hello! JS</h1>"
+
+        // document.write("demo  ");
+        // console.log("demo4");
+
+        // var a = 123;
+        // var g = a == a;
+        // document.write(g);
+        // document.write("<br>");
+        // document.write("-------------");
+        // document.write("<br>");
+
+        // var w = 90;
+        // var h = 1.8;
+        // var bmi = getBMI(w, h);
+
+        // function getBMI(w, h) {
+        //     return bmi = w / (h * h);
+        //     document.write(bmi);
+        //     document.write(" gg");
+        // }
+
+        // document.write(bmi);
+        // document.write("<br>");
+        // document.write("-----------------------------");
+        // document.write("<br>");
+        // document.write(getBMI(70, 1.8));
+        // document.write("<br>");
+        // document.write("#######################");
+        // document.write("<br>");
+
+
+        // document.write("當體重" + w + "公斤，身高" + h * 100 + "公分<br>");
+        // document.write("BMI是" + Math.round(bmi * 100) / 100 + "<br>");
+
+        // if (bmi > 25) {
+        //     document.write("  體重過重");
+        // } else {
+        //     if (bmi < 20) {
+        //         document.write("  體重過輕");
+        //     } else {
+        //         document.write("  體重正常");
+        //     }
+        // }
+
+
+
+
+    </script>
+</body>
+
+</html>
